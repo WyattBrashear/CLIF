@@ -1,0 +1,8 @@
+[project]
+name = "clif"
+version = "0.1.0"
+description = "CLIF CLI File storage system (CLI Google Drive Essentially)"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.1.3",
+]
