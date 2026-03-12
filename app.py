@@ -51,6 +51,7 @@ def fetch_userdata():
 
 @app.route('/upload_file', methods=['POST'])
 def upload_file():
+    #TODO: Switch the file backend over to a SQL database
     #Connect the Database
     database_connection = sqlite3.connect('UserData.db')
     database_cursor = database_connection.cursor()
