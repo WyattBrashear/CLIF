@@ -9,6 +9,7 @@
     </content>
     <orderEntry type="jdk" jdkName="uv (CLIF)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="507ex" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
