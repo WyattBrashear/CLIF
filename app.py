@@ -28,7 +28,7 @@ def register_user():  # put application's code here
     user_name = str(request_data['username'])
     pass_hash = str(request_data['password'])
     pass_hashmode = str(request_data['password_hash'])
-    allocation_limit = int(5120000000)
+    allocation_limit = int(20000)
     database_cursor.execute("INSERT INTO userdata (user_id, user_name, pass_hash, pass_hashmode, allocation_limit, used_data) VALUES (?, ?, ?, ?, ?, ?)", (user_id, user_name, pass_hash, pass_hashmode, allocation_limit, 0))
     database_connection.commit()
     return {
@@ -37,7 +37,7 @@ def register_user():  # put application's code here
         'user_id': user_id
     }
 
-@app.route('/fetch_userdata', methods=['POST'])
+@app.route('/fetch-userdata', methods=['POST'])
 def fetch_userdata():
     database_connection = sqlite3.connect('UserData.db')
     database_cursor = database_connection.cursor()
@@ -45,12 +45,15 @@ def fetch_userdata():
     #first things first. Before we hand over ANY user data, We need to do Authentication
     database_cursor.execute("SELECT user_id, user_name, pass_hash, allocation_limit, used_data FROM userdata WHERE user_id = ? AND pass_hash = ?", (request_data.get('user_id'), request_data.get('pass_hash')))
     data = database_cursor.fetchall()
+    #Yes i know this is a bad variable name. i cant think of a name right now.
+    x = data[0][4] / data[0][3]
     return {
         'status': 'success',
         'user_id': data[0][0],
         'user_name': data[0][1],
         'allocation_limit': data[0][3],
         'used_data': data[0][4],
+        'data_percent': int(x*100)
     }
 
 @app.route('/upload_file', methods=['POST'])

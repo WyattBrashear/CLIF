@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Add a TODO">
+    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Implement the changes i was previously talking about. File storage backend is now assisted with the SQL database">
       <change beforePath="$PROJECT_DIR$/Client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/testfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileStor/users/7a16600c-3022-4cc2-bb38-da06c7f45c6e/meowmix" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +194,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773085411540</updated>
-      <workItem from="1773085412541" duration="69275000" />
+      <workItem from="1773085412541" duration="72128000" />
     </task>
     <task id="LOCAL-00001" summary="Commit my work for right now">
       <option name="closed" value="true" />
@@ -221,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773313079155</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implement the changes i was previously talking about. File storage backend is now assisted with the SQL database">
+      <option name="closed" value="true" />
+      <created>1773436874695</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773436874695</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,30 +249,32 @@
     <MESSAGE value="Commit my work for right now" />
     <MESSAGE value="Add Todays work. I think i may need to switch the file hosting backend to a SQL database." />
     <MESSAGE value="Add a TODO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a TODO" />
+    <MESSAGE value="Commit!" />
+    <MESSAGE value="Implement the changes i was previously talking about. File storage backend is now assisted with the SQL database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement the changes i was previously talking about. File storage backend is now assisted with the SQL database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>81</line>
+          <line>84</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>172</line>
+          <line>175</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>64</line>
+          <line>67</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CLIF$CLIF.coverage" NAME="CLIF Coverage Results" MODIFIED="1773436586015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIF$CLIF.coverage" NAME="CLIF Coverage Results" MODIFIED="1773441932534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

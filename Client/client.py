@@ -5,7 +5,7 @@ import requests
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('action', choices=['upload', 'download', 'list', 'login', 'logout', 'delete', 'signup'])
+parser.add_argument('action', choices=['upload', 'download', 'list', 'login', 'logout', 'delete', 'signup', 'info'])
 parser.add_argument('file', nargs='?')
 args = parser.parse_args()
 
@@ -87,6 +87,9 @@ if args.action == 'upload':
 if args.action == 'download':
     if os.path.exists(".clif/authdata"):
         r = requests.post(f"{server_address}/retrieve-file", json={'user_id': user_id, 'pass_hash': passhash, 'filename': args.file})
+        if r.status_code != 200:
+            print("An error occurred while downloading the file.")
+            exit()
         with open(args.file, "wb") as f:
             f.write(r.content)
         print(f"Downloaded {args.file} successfully")
@@ -110,3 +113,16 @@ if args.action == 'delete':
     else:
         print("You are not logged in!")
         exit()
+if args.action == 'info':
+    r = requests.post(f"{server_address}/fetch-userdata", json={'user_id': user_id, 'pass_hash': passhash})
+    if r.status_code != 200:
+        print("An error occurred while fetching user data.")
+        exit()
+    print(f"""User Statistics for {username}:
+---------------------------------
+            Username: {username}
+            User ID: {user_id}
+            Used Storage: {r.json()['used_data']} bytes
+            Allocation Limit: {r.json()['allocation_limit']} bytes
+            Percentage of storage used: {r.json()['data_percent']}%
+""")
