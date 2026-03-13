@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Implement the changes i was previously talking about. File storage backend is now assisted with the SQL database">
-      <change beforePath="$PROJECT_DIR$/Client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="I think im donw. Finally.">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +194,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773085411540</updated>
-      <workItem from="1773085412541" duration="72128000" />
+      <workItem from="1773085412541" duration="73659000" />
     </task>
     <task id="LOCAL-00001" summary="Commit my work for right now">
       <option name="closed" value="true" />
@@ -228,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773436874695</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="I think im donw. Finally.">
+      <option name="closed" value="true" />
+      <created>1773442014470</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773442014470</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +259,8 @@
     <MESSAGE value="Add a TODO" />
     <MESSAGE value="Commit!" />
     <MESSAGE value="Implement the changes i was previously talking about. File storage backend is now assisted with the SQL database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement the changes i was previously talking about. File storage backend is now assisted with the SQL database" />
+    <MESSAGE value="I think im donw. Finally." />
+    <option name="LAST_COMMIT_MESSAGE" value="I think im donw. Finally." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
