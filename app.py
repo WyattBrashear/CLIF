@@ -1,3 +1,7 @@
+import shutil
+
+import hashlib
+
 from flask import Flask, request, send_file, send_from_directory
 import sqlite3
 import uuid
@@ -10,6 +14,7 @@ database_cursor1 = database_connection1.cursor()
 database_cursor1.execute(
     'CREATE TABLE IF NOT EXISTS userdata (user_id TEXT, user_name TEXT, pass_hash TEXT, pass_hashmode TEXT, allocation_limit INT, used_data INT)'
 )
+database_cursor1.execute("CREATE TABLE IF NOT EXISTS filedata (file_id TEXT, owner TEXT, file_name TEXT, file_size INT, file_path TEXT, file_hash TEXT)")
 database_connection1.commit()
 app = Flask(__name__)
 
@@ -26,7 +31,6 @@ def register_user():  # put application's code here
     allocation_limit = int(5120000000)
     database_cursor.execute("INSERT INTO userdata (user_id, user_name, pass_hash, pass_hashmode, allocation_limit, used_data) VALUES (?, ?, ?, ?, ?, ?)", (user_id, user_name, pass_hash, pass_hashmode, allocation_limit, 0))
     database_connection.commit()
-    os.mkdir(f"FileStor/users/{user_id}")
     return {
         'status': 'success',
         'message': 'User Created',
@@ -51,7 +55,6 @@ def fetch_userdata():
 
 @app.route('/upload_file', methods=['POST'])
 def upload_file():
-    #TODO: Switch the file backend over to a SQL database
     #Connect the Database
     database_connection = sqlite3.connect('UserData.db')
     database_cursor = database_connection.cursor()
@@ -78,32 +81,33 @@ def upload_file():
     try:
         if data[0][0] == passhash:
             #Then, UPLOAD
-            with open(f"FileStor/users/{request.form.get('user_id')}/{request.form.get('filename')}", 'wb') as f:
+            file_id = str(uuid.uuid4())
+            with open(f"FileStor/{file_id}", 'wb') as f:
                 f.write(request.files['file'].read())
                 f.flush()
-                # Get current usage size
-                database_cursor.execute("SELECT used_data FROM userdata WHERE user_id = ?",(request.form.get('user_id'),))
-                data = database_cursor.fetchall()
-                print(data)
-                used_amount = int(data[0][0])
-                file_size = Path(f"FileStor/users/{request.form.get('user_id')}/{request.form.get('filename')}").stat().st_size
-                print(used_amount, file_size)
-                # Update the data usage amount
-                new_amount = used_amount + file_size
-                if new_amount >= sizedata[0][1]:
-                    os.remove(f"FileStor/users/{request.form.get('user_id')}/{secure_filename(request.form.get('filename'))}")
-                    return {
-                        'status': 'fail',
-                        'message': 'Used storage is higher than allocation!'
-                    }
-                print(new_amount)
-                database_cursor.execute("UPDATE userdata SET used_data = ? WHERE user_id = ?",(new_amount, request.form.get('user_id'),))
-                database_connection.commit()
-                print("Updated")
-                return {
-                    'status': 'success',
-                    'message': 'File Uploaded',
-                }
+            #Calculate file hash
+            hash_func = hashlib.new("sha256")
+            with open(f"FileStor/{file_id}", 'rb') as file:
+                while chunk := file.read(8192):
+                    hash_func.update(chunk)
+            file_hash = hash_func.hexdigest()
+            try:
+                os.mkdir(f"FileStor/{file_hash[:2]}")
+            except:
+                pass
+            shutil.move(f"FileStor/{file_id}", f"FileStor/{file_hash[:2]}/{file_id}")
+            database_cursor.execute("INSERT INTO filedata (file_id, owner, file_name, file_size, file_path, file_hash) VALUES (?, ?, ?, ?, ?, ?)", (file_id, request.form.get('user_id'), request.form.get('filename'), os.path.getsize(f"FileStor/{file_hash[:2]}/{file_id}"), f"{file_hash[:2]}/{file_id}", file_hash))
+            database_connection.commit()
+            database_cursor.execute("SELECT file_size FROM filedata WHERE owner = ?", (request.form.get('user_id'),))
+            data = database_cursor.fetchall()
+            new_size = sum(row[0] for row in data)
+            database_cursor.execute("UPDATE userdata SET used_data = ? WHERE user_id = ?",
+                                    (new_size, request.form.get('user_id')))
+            database_connection.commit()
+            return {
+                'status': 'success',
+                'message': 'File Uploaded',
+            }
         else:
             return {
                 'status': 'fail',
@@ -133,7 +137,8 @@ def list_dir():
         }
     try:
         if data[0][0] == request_data.get('pass_hash'):
-            directories = os.listdir(f"FileStor/users/{request_data.get('user_id')}/{request_data.get('directory')}")
+            database_cursor.execute("SELECT file_name FROM filedata WHERE owner = ?", (request_data.get('user_id'),))
+            directories = database_cursor.fetchall()
             return {
                 'status': 'success',
                 'directories': directories
@@ -150,6 +155,7 @@ def list_dir():
         }
 @app.route('/retrieve-file', methods=['POST'])
 def retrieve_file():
+    print("YOU DID IT")
     database_connection = sqlite3.connect('UserData.db')
     database_cursor = database_connection.cursor()
     request_data = request.get_json()
@@ -157,12 +163,14 @@ def retrieve_file():
     database_cursor.execute("SELECT pass_hash FROM userdata WHERE pass_hash = ? AND user_id = ?", (request_data.get('pass_hash'),request_data.get('user_id'),))
     data = database_cursor.fetchall()
     if data[0][0] == request_data.get('pass_hash'):
-        if os.path.exists(f"FileStor/users/{request_data.get('user_id')}/{request_data.get('filename')}"):
-            return send_from_directory(
-                directory=f"FileStor/users/{secure_filename(request_data.get('user_id'))}",
-                path=secure_filename(request_data.get('filename')),
-                as_attachment=True,
-            )
+        # Get data from filedata database
+        database_cursor.execute(
+            "SELECT file_path, file_id, file_hash, file_name FROM filedata WHERE file_name = ? AND owner = ?",
+            (request_data.get('filename'), request_data.get('user_id'),))
+        filedata = database_cursor.fetchall()
+        print(filedata)
+        if filedata:
+            return send_from_directory(f"FileStor/{str(filedata[0][0])[:2]}", filedata[0][1], as_attachment=True)
         else:
             return {
                 'status': 'fail',
@@ -215,8 +223,18 @@ def delete_file():
     database_cursor.execute("SELECT pass_hash FROM userdata WHERE user_id = ? AND pass_hash = ?", (request_data.get('user_id'), request_data.get('pass_hash')))
     auth_data = database_cursor.fetchall()
     if auth_data[0][0] == request_data.get('pass_hash'):
-        filepath = secure_filename(request_data.get('filename'))
-        os.remove(f"FileStor/users/{secure_filename(request_data.get('user_id'))}/{filepath}")
+        database_cursor.execute("SELECT file_path FROM filedata WHERE owner = ? and file_name = ?", (request_data.get('user_id'), request_data.get('filename')))
+        data = database_cursor.fetchall()
+        print(request_data)
+        print(data)
+        os.remove(f"FileStor/{data[0][0]}")
+        database_cursor.execute("DELETE FROM filedata WHERE owner = ? AND file_name = ?", (request_data.get("user_id"), request_data.get('filename')))
+        database_connection.commit()
+        database_cursor.execute("SELECT file_size FROM filedata WHERE owner = ?", (request_data.get('user_id'),))
+        data = database_cursor.fetchall()
+        new_size = sum(row[0] for row in data)
+        database_cursor.execute("UPDATE userdata SET used_data = ? WHERE user_id = ?", (new_size, request_data.get('user_id')))
+        database_connection.commit()
         return {
             'status': 'success',
             'message': 'File Deleted'

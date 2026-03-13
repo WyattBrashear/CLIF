@@ -5,7 +5,7 @@ import requests
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('action', choices=['upload', 'download', 'listdir', 'login', 'logout', 'delete', 'signup'])
+parser.add_argument('action', choices=['upload', 'download', 'list', 'login', 'logout', 'delete', 'signup'])
 parser.add_argument('file', nargs='?')
 args = parser.parse_args()
 
@@ -53,7 +53,7 @@ if args.action == 'login':
         passhash = hashlib.sha256(input("Enter your password:\n").encode()).hexdigest()
         r = requests.post(f"{server_address}/authenticate", json={'user_id': user_id, 'pass_hash': passhash})
     except:
-        print("An error occured while logging you in.")
+        print("An error occurred while logging you in.")
         exit()
     if r.json()['status'] == "success":
         print("Login Successful")
@@ -83,3 +83,30 @@ if args.action == 'upload':
         with open(args.file, "rb") as f:
             r = requests.post(f"{server_address}/upload_file", files=[('file', f)], data={'user_id': user_id, 'pass_hash': passhash, 'filename': args.file})
             print(r.json()['message'])
+
+if args.action == 'download':
+    if os.path.exists(".clif/authdata"):
+        r = requests.post(f"{server_address}/retrieve-file", json={'user_id': user_id, 'pass_hash': passhash, 'filename': args.file})
+        with open(args.file, "wb") as f:
+            f.write(r.content)
+        print(f"Downloaded {args.file} successfully")
+    else:
+        print("You are not logged in!")
+        exit()
+if args.action == 'list':
+    if os.path.exists(".clif/authdata"):
+        r = requests.post(f"{server_address}/list", json={'user_id': user_id, 'pass_hash': passhash})
+        directories = r.json()['directories']
+        print(f"Files currently owned by {username}:")
+        for directory in directories:
+            print(directory[0])
+    else:
+        print("You are not logged in!")
+        exit()
+if args.action == 'delete':
+    if os.path.exists(".clif/authdata"):
+        r = requests.post(f"{server_address}/delete-file", json={'user_id': user_id, 'pass_hash': passhash, 'filename': args.file})
+        print(r.json()['message'])
+    else:
+        print("You are not logged in!")
+        exit()

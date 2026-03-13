@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Commit my work for right now">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/testfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FileStor/users/7a16600c-3022-4cc2-bb38-da06c7f45c6e/meowmix" afterDir="false" />
+    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Add a TODO">
+      <change beforePath="$PROJECT_DIR$/Client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/testfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStor/users/7a16600c-3022-4cc2-bb38-da06c7f45c6e/meowmix" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +54,7 @@
   }
 }]]></component>
   <component name="HttpClientEndpointsTabState">
-    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;beb4197667f55250582e7378843e758f0568387c&quot; value=&quot;###&amp;#10;POST http://localhost:5000/retrieve-file&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests /&gt;" />
   </component>
   <component name="HttpClientOnboardingState"><![CDATA[{
   "isOnboardingCommentShown": true
@@ -197,7 +195,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773085411540</updated>
-      <workItem from="1773085412541" duration="50797000" />
+      <workItem from="1773085412541" duration="69275000" />
     </task>
     <task id="LOCAL-00001" summary="Commit my work for right now">
       <option name="closed" value="true" />
@@ -207,7 +205,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773090829507</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Todays work. I think i may need to switch the file hosting backend to a SQL database.">
+      <option name="closed" value="true" />
+      <created>1773283345236</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773283345236</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add a TODO">
+      <option name="closed" value="true" />
+      <created>1773313079155</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773313079155</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,9 +240,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit my work for right now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit my work for right now" />
+    <MESSAGE value="Add Todays work. I think i may need to switch the file hosting backend to a SQL database." />
+    <MESSAGE value="Add a TODO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a TODO" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>172</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CLIF$CLIF.coverage" NAME="CLIF Coverage Results" MODIFIED="1773282882608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIF$CLIF.coverage" NAME="CLIF Coverage Results" MODIFIED="1773436586015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
