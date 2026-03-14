@@ -1,0 +1,2 @@
+mkdir ~/.clif
+cd ~/.clif
