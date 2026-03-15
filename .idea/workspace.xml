@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="I think im donw. Finally.">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
+    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="I think im done. Finally.">
+      <change afterPath="$PROJECT_DIR$/distrobution/507ex/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/distrobution/507ex/runfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/distrobution/507ex/startup.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/distrobution/unix_distro/exec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="92" />
+    <option name="cachedIndexableFilesCount" value="110" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -103,6 +108,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/wyattbrashear/Projects/CLIF/distrobution/507ex",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,6 +124,16 @@
   </component>
   <component name="RecapUselessUpdatesCounter">
     <option name="suspendCountdown" value="0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/distrobution/507ex" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/distrobution/unix_distro" />
+      <recent name="$PROJECT_DIR$/distrobution" />
+      <recent name="$PROJECT_DIR$/distrobution/507ex" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationStatuses">
@@ -194,7 +210,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773085411540</updated>
-      <workItem from="1773085412541" duration="73659000" />
+      <workItem from="1773085412541" duration="90930000" />
     </task>
     <task id="LOCAL-00001" summary="Commit my work for right now">
       <option name="closed" value="true" />
@@ -236,7 +252,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773442014470</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="I think im done. Finally.">
+      <option name="closed" value="true" />
+      <created>1773445335269</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773445335269</updated>
+    </task>
+    <task id="LOCAL-00007" summary="I think im done. Finally.">
+      <option name="closed" value="true" />
+      <created>1773449162435</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1773449162435</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,30 +292,31 @@
     <MESSAGE value="Commit!" />
     <MESSAGE value="Implement the changes i was previously talking about. File storage backend is now assisted with the SQL database" />
     <MESSAGE value="I think im donw. Finally." />
-    <option name="LAST_COMMIT_MESSAGE" value="I think im donw. Finally." />
+    <MESSAGE value="I think im done. Finally." />
+    <option name="LAST_COMMIT_MESSAGE" value="I think im done. Finally." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>84</line>
+          <line>86</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>175</line>
+          <line>177</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>67</line>
+          <line>69</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CLIF$CLIF.coverage" NAME="CLIF Coverage Results" MODIFIED="1773441932534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIF$CLIF.coverage" NAME="CLIF Coverage Results" MODIFIED="1773446106391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
