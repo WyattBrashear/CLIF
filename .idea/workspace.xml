@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="I think im done. Finally.">
-      <change afterPath="$PROJECT_DIR$/distrobution/507ex/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/distrobution/507ex/runfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/distrobution/507ex/startup.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/distrobution/unix_distro/exec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Almost done with distro-ing">
+      <change afterPath="$PROJECT_DIR$/distrobution/client/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +102,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/wyattbrashear/Projects/CLIF/distrobution/507ex",
+    "last_opened_file_path": "/Users/wyattbrashear/Projects/CLIF/distrobution/client",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -127,6 +121,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/distrobution/client" />
       <recent name="$PROJECT_DIR$/distrobution/507ex" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -210,7 +205,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773085411540</updated>
-      <workItem from="1773085412541" duration="90930000" />
+      <workItem from="1773085412541" duration="92650000" />
     </task>
     <task id="LOCAL-00001" summary="Commit my work for right now">
       <option name="closed" value="true" />
@@ -268,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773449162435</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Almost done with distro-ing">
+      <option name="closed" value="true" />
+      <created>1773593772728</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773593772728</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +296,8 @@
     <MESSAGE value="Implement the changes i was previously talking about. File storage backend is now assisted with the SQL database" />
     <MESSAGE value="I think im donw. Finally." />
     <MESSAGE value="I think im done. Finally." />
-    <option name="LAST_COMMIT_MESSAGE" value="I think im done. Finally." />
+    <MESSAGE value="Almost done with distro-ing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost done with distro-ing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,0 +1,835 @@
+POST http://localhost:5000/delete-file
+Content-Type: application/json
+Content-Length: 116
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "filename": "note_to_self.txt",
+  "pass_hash": "sixseven"
+}
+
+<> 2026-03-11T103828.200.json
+
+###
+
+POST http://localhost:5000/delete-file
+Content-Type: application/json
+Content-Length: 116
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "filename": "note_to_self.txt",
+  "pass_hash": "sixseven"
+}
+
+###
+
+POST http://localhost:5000/retrieve-file
+Content-Type: application/json
+Content-Length: 107
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "filename": "meowmix",
+  "pass_hash": "sixseven"
+}
+
+<> meowmix-2
+
+###
+
+POST http://localhost:5000/translate_uname
+Content-Type: application/json
+Content-Length: 26
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_name": "wyatt"
+}
+
+<> 2026-03-11T072129-1.200.json
+
+###
+
+POST http://localhost:5000/list
+Content-Type: application/json
+Content-Length: 101
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "pass_hash": "sixseven",
+  "directory": ""
+}
+
+<> 2026-03-11T072129.200.json
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 130
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-11T072128-2.200.json
+
+###
+
+POST http://localhost:5000/fetch_userdata
+Content-Type: application/json
+Content-Length: 82
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "pass_hash": "sixseven"
+}
+
+<> 2026-03-11T072128-1.200.json
+
+###
+
+POST http://localhost:5000/register
+Content-Type: application/json
+Content-Length: 78
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "wyatt",
+  "password": "sixseven",
+  "password_hash": "None"
+}
+
+<> 2026-03-11T072128.200.json
+
+###
+
+POST http://localhost:5000/translate_uname
+Content-Type: application/json
+Content-Length: 26
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_name": "wyatt"
+}
+
+<> 2026-03-11T072120.200.json
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 130
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-11T072014.200.json
+
+###
+
+POST http://localhost:5000/retrieve-file
+Content-Type: application/json
+Content-Length: 107
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "filename": "meowmix",
+  "pass_hash": "sixseven"
+}
+
+<> meowmix-1
+
+###
+
+POST http://localhost:5000/retrieve-file
+Content-Type: application/json
+Content-Length: 108
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16k600c-3022-4cc2-bb38-da06c7f45c6e",
+  "filename": "meowmix",
+  "pass_hash": "sixseven"
+}
+
+<> 2026-03-10T232911.500.html
+
+###
+
+POST http://localhost:5000/retrieve-file
+Content-Type: application/json
+Content-Length: 107
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "filename": "meowmix",
+  "pass_hash": "sixseven"
+}
+
+<> meowmix
+
+###
+
+POST http://localhost:5000/retrieve-file
+Content-Type: application/json
+Content-Length: 107
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "filename": "meowmix",
+  "pass_hash": "sixseven"
+}
+
+<> 2026-03-10T231526.500.html
+
+###
+
+POST http://localhost:5000/retrieve-file
+Content-Type: application/json
+Content-Length: 80
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "7a16600c-3022-4cc2-bb38-da06c7f45c6e",
+  "filename": "meowmix"
+}
+
+<> 2026-03-10T231454.500.html
+
+###
+
+POST http://localhost:5000/translate_uname
+Content-Type: application/json
+Content-Length: 26
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_name": "wyatt"
+}
+
+<> 2026-03-10T230632.200.json
+
+###
+
+POST http://localhost:5000/tranlate_uname
+Content-Type: application/json
+Content-Length: 26
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_name": "wyatt"
+}
+
+<> 2026-03-10T155650.200.json
+
+###
+
+POST http://localhost:5000/tranlate_uname
+Content-Type: application/json
+Content-Length: 26
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_name": "wyatt"
+}
+
+###
+
+POST http://localhost:5000/register
+Content-Type: application/json
+Content-Length: 78
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "wyatt",
+  "password": "sixseven",
+  "password_hash": "None"
+}
+
+<> 2026-03-10T110744.200.json
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 129
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "ixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T110519.200.json
+
+###
+
+POST http://localhost:5000/retrieve-file
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-03-10T110445.415.html
+
+###
+
+POST http://localhost:5000/list
+Content-Type: application/json
+Content-Length: 101
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "directory": ""
+}
+
+<> 2026-03-10T110445-3.200.json
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 130
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T110445-2.200.json
+
+###
+
+POST http://localhost:5000/fetch_userdata
+Content-Type: application/json
+Content-Length: 82
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven"
+}
+
+<> 2026-03-10T110445-1.200.json
+
+###
+
+POST http://localhost:5000/register
+Content-Type: application/json
+Content-Length: 78
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "wyatt",
+  "password": "sixseven",
+  "password_hash": "None"
+}
+
+<> 2026-03-10T110445.200.json
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 130
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T110423.200.json
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 130
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T110401.200.json
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 130
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T110153.500.html
+
+###
+
+POST http://localhost:5000/list
+Content-Type: application/json
+Content-Length: 101
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "directory": ""
+}
+
+<> 2026-03-10T104624.200.json
+
+###
+
+POST http://localhost:5000/list
+Content-Type: application/json
+Content-Length: 100
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sxseven",
+  "directory": ""
+}
+
+<> 2026-03-10T104617.200.json
+
+###
+
+POST http://localhost:5000/list
+Content-Type: application/json
+Content-Length: 101
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "directory": ""
+}
+
+<> 2026-03-10T104432-2.200.json
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 130
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T104432-1.200.json
+
+###
+
+POST http://localhost:5000/fetch_userdata
+Content-Type: application/json
+Content-Length: 82
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven"
+}
+
+<> 2026-03-10T104432.200.json
+
+###
+
+POST http://localhost:5000/register
+Content-Type: application/json
+Content-Length: 78
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "wyatt",
+  "password": "sixseven",
+  "password_hash": "None"
+}
+
+<> 2026-03-10T104431.200.json
+
+###
+
+POST http://localhost:5000/list
+Content-Type: application/json
+Content-Length: 101
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "directory": ""
+}
+
+<> 2026-03-10T104330.200.json
+
+###
+
+POST http://localhost:5000/list
+Content-Type: application/json
+Content-Length: 100
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixeven",
+  "directory": ""
+}
+
+<> 2026-03-10T104250.200.json
+
+###
+
+POST http://localhost:5000/list
+Content-Type: application/json
+Content-Length: 101
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "directory": ""
+}
+
+<> 2026-03-10T104226.200.json
+
+###
+
+POST http://localhost:5000/list
+Content-Type: application/json
+Content-Length: 101
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "directory": ""
+}
+
+<> 2026-03-10T104152.500.html
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 131
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51v-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T074508.200.json
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 131
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51v-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T074308.500.html
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 130
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T074227.400.html
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 130
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T074020.400.html
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 147
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "aiden is an idiot",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T073813.400.html
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 147
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "aiden is an idiot",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T073558.200.json
+
+###
+
+POST http://localhost:5000/upload_file
+Content-Type: application/json
+Content-Length: 147
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven",
+  "file": "aiden is an idiot",
+  "filename": "note_to_self.txt"
+}
+
+<> 2026-03-10T073449.200.json
+
+###
+
+POST http://localhost:5000/fetch_userdata
+Content-Type: application/json
+Content-Length: 82
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "bc4bdb51-e89f-4620-a68c-f8cfbe761ab3",
+  "pass_hash": "sixseven"
+}
+
+<> 2026-03-10T073133.200.json
+
+###
+
+POST http://localhost:5000/register
+Content-Type: application/json
+Content-Length: 78
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "wyatt",
+  "password": "sixseven",
+  "password_hash": "None"
+}
+
+<> 2026-03-10T073043.200.json
+
+###
+
+POST http://localhost:5000/register
+Content-Type: application/json
+Content-Length: 78
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "wyatt",
+  "password": "sixseven",
+  "password_hash": "None"
+}
+
+###
+
+POST http://localhost:5000/fetch_userdata
+Content-Type: application/json
+Content-Length: 82
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "47098a2f-284f-4c90-bc15-34261f52da36",
+  "pass_hash": "sixseven"
+}
+
+<> 2026-03-09T185817.200.json
+
+###
+
+POST http://localhost:5000/fetch_userdata
+Content-Type: application/json
+Content-Length: 81
+User-Agent: IntelliJ HTTP Client/PyCharm 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": "47098a2f-284f-4c90-bc15-34261f52da36",
+  "password": "sixseven"
+}
+
+<> 2026-03-09T185727.500.html
+
+###
+
