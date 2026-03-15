@@ -29,9 +29,8 @@ def register_user():  # put application's code here
     user_id = str(uuid.uuid4())
     user_name = str(request_data['username'])
     pass_hash = str(request_data['password'])
-    pass_hashmode = str(request_data['password_hash'])
     allocation_limit = int(20000)
-    database_cursor.execute("INSERT INTO userdata (user_id, user_name, pass_hash, pass_hashmode, allocation_limit, used_data) VALUES (?, ?, ?, ?, ?, ?)", (user_id, user_name, pass_hash, pass_hashmode, allocation_limit, 0))
+    database_cursor.execute("INSERT INTO userdata (user_id, user_name, pass_hash, pass_hashmode, allocation_limit, used_data) VALUES (?, ?, ?, ?, ?, ?)", (user_id, user_name, pass_hash, 'sha256', allocation_limit, 0))
     database_connection.commit()
     return {
         'status': 'success',
@@ -160,7 +159,6 @@ def list_dir():
         }
 @app.route('/retrieve-file', methods=['POST'])
 def retrieve_file():
-    print("YOU DID IT")
     database_connection = sqlite3.connect('UserData.db')
     database_cursor = database_connection.cursor()
     request_data = request.get_json()
