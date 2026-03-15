@@ -15,8 +15,9 @@ The server can be interacted with either by the client application or curl
 2. Run the client executable.
 3. (Optional) if you want to run the client without the exe overhead, install the packages: requests.
 
-
-
+## Official Server
+http://187.124.225.245:999
+(Server is secure, hosted with gunicorn!)
 ## Demo Video:
 https://drive.google.com/file/d/1rXJU0RaOJyMVX-mN0eXn6FDzDeSv1rVL/view?usp=sharing
 

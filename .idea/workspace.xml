@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Ok. Distro-ing done">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileStor/ac/ab226928-bd28-4f30-95ef-8c014be17fcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileStor/ac/f195feb2-a4ec-42a3-9889-7cf7996ce382" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileStor/e6/a7ceaf8a-50c0-4299-aea4-8e896b284c29" beforeDir="false" />
+    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Add some work based on reccomendations">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserData.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +206,7 @@
       <option name="presentableId" value="Default" />
       <updated>1773085411540</updated>
       <workItem from="1773085412541" duration="93136000" />
-      <workItem from="1773602879916" duration="1431000" />
+      <workItem from="1773602879916" duration="3085000" />
     </task>
     <task id="LOCAL-00001" summary="Commit my work for right now">
       <option name="closed" value="true" />
@@ -286,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773595479967</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add some work based on reccomendations">
+      <option name="closed" value="true" />
+      <created>1773604344020</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773604344020</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +315,8 @@
     <MESSAGE value="I think im done. Finally." />
     <MESSAGE value="Almost done with distro-ing" />
     <MESSAGE value="Ok. Distro-ing done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ok. Distro-ing done" />
+    <MESSAGE value="Add some work based on reccomendations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some work based on reccomendations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -337,6 +340,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CLIF$CLIF.coverage" NAME="CLIF Coverage Results" MODIFIED="1773446106391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIF$CLIF.coverage" NAME="CLIF Coverage Results" MODIFIED="1773604918559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
