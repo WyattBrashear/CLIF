@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Add some work based on reccomendations">
-      <change afterPath="$PROJECT_DIR$/client/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/testfile" beforeDir="false" afterPath="$PROJECT_DIR$/client/testfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/distrobution/507ex/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/distrobution/507ex/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/distrobution/client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/distrobution/client/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
-    </list>
+    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="It Is Pypied now...." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,7 +205,7 @@
       <updated>1773085411540</updated>
       <workItem from="1773085412541" duration="93136000" />
       <workItem from="1773602879916" duration="6286000" />
-      <workItem from="1773862214598" duration="4017000" />
+      <workItem from="1773862214598" duration="4047000" />
     </task>
     <task id="LOCAL-00001" summary="Commit my work for right now">
       <option name="closed" value="true" />
@@ -315,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773607685290</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="It Is Pypied now....">
+      <option name="closed" value="true" />
+      <created>1773866994959</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1773866994959</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +339,8 @@
     <MESSAGE value="Almost done with distro-ing" />
     <MESSAGE value="Ok. Distro-ing done" />
     <MESSAGE value="Add some work based on reccomendations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add some work based on reccomendations" />
+    <MESSAGE value="It Is Pypied now...." />
+    <option name="LAST_COMMIT_MESSAGE" value="It Is Pypied now...." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
