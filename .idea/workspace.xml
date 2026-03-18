@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Add some work based on reccomendations" />
+    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Add some work based on reccomendations">
+      <change afterPath="$PROJECT_DIR$/client/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/testfile" beforeDir="false" afterPath="$PROJECT_DIR$/client/testfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/distrobution/507ex/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/distrobution/507ex/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/distrobution/client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/distrobution/client/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,39 +88,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Flask server.CLIF.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.All in generated-requests.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #5.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #6.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #7.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/wyattbrashear/Projects/CLIF/distrobution/client&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Flask server.CLIF.executor": "Run",
+    "HTTP Request.All in generated-requests.executor": "Run",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
+    "HTTP Request.generated-requests | #7.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/wyattbrashear/Projects/CLIF/server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1774130412998" />
     <option name="spentUsd" value="0.23005979" />
@@ -118,6 +130,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/distrobution/client" />
       <recent name="$PROJECT_DIR$/distrobution/507ex" />
     </key>
@@ -204,6 +217,7 @@
       <updated>1773085411540</updated>
       <workItem from="1773085412541" duration="93136000" />
       <workItem from="1773602879916" duration="6286000" />
+      <workItem from="1773862214598" duration="4017000" />
     </task>
     <task id="LOCAL-00001" summary="Commit my work for right now">
       <option name="closed" value="true" />

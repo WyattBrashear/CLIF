@@ -2,14 +2,13 @@ import hashlib
 
 import os
 import requests
-exiting = False
-while not exiting:
-    choices = ['upload', 'download', 'list', 'login', 'logout', 'delete', 'signup', 'info', 'exit']
-    print("Please select an action:")
-    for choice in choices:
-        print(f"{choice}")
-    choice = input("Enter your choice:\n")
-    file = input("Enter the file name (If none, leave blank):\n")
+import argparse
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('action', choices=['upload', 'download', 'list', 'login', 'logout', 'delete', 'signup', 'info'])
+    parser.add_argument('file', nargs='?')
+    args = parser.parse_args()
 
     try:
         with open(os.path.join(".clif", "authdata"), "r") as f:
@@ -21,7 +20,7 @@ while not exiting:
         pass
 
 
-    if choice == 'signup':
+    if args.action == 'signup':
         if os.path.exists(os.path.join(".clif", "authdata")):
             print("You are already logged in!")
             exit()
@@ -47,7 +46,7 @@ while not exiting:
         else:
             print("User Creation Failed")
 
-    if choice == 'login':
+    if args.action == 'login':
         try:
             server_address = input("Enter the server address:\n")
             r = requests.post(f"{server_address}/translate_uname", json={'user_name': input("Enter your username:\n")})
@@ -75,30 +74,30 @@ while not exiting:
             print("Authentication Failed!")
             exit()
 
-    if choice == 'logout':
+    if args.action == 'logout':
         if input("Are you sure you want to logout? (y/n)\n").lower() == "y":
             os.remove(os.path.join(".clif", "authdata"))
         else:
             pass
-    if choice == 'upload':
+    if args.action == 'upload':
         if os.path.exists(os.path.join(".clif", "authdata")):
-            with open(file, "rb") as f:
-                r = requests.post(f"{server_address}/upload_file", files=[('file', f)], data={'user_id': user_id, 'pass_hash': passhash, 'filename': file})
+            with open(args.file, "rb") as f:
+                r = requests.post(f"{server_address}/upload_file", files=[('file', f)], data={'user_id': user_id, 'pass_hash': passhash, 'filename': args.file})
                 print(r.json()['message'])
 
-    if choice == 'download':
+    if args.action == 'download':
         if os.path.exists(os.path.join(".clif", "authdata")):
-            r = requests.post(f"{server_address}/retrieve-file", json={'user_id': user_id, 'pass_hash': passhash, 'filename': file})
+            r = requests.post(f"{server_address}/retrieve-file", json={'user_id': user_id, 'pass_hash': passhash, 'filename': args.file})
             if r.status_code != 200:
                 print("An error occurred while downloading the file.")
                 exit()
-            with open(file, "wb") as f:
+            with open(args.file, "wb") as f:
                 f.write(r.content)
-            print(f"Downloaded {file} successfully")
+            print(f"Downloaded {args.file} successfully")
         else:
             print("You are not logged in!")
             exit()
-    if choice == 'list':
+    if args.action == 'list':
         if os.path.exists(os.path.join(".clif", "authdata")):
             r = requests.post(f"{server_address}/list", json={'user_id': user_id, 'pass_hash': passhash})
             directories = r.json()['directories']
@@ -108,14 +107,14 @@ while not exiting:
         else:
             print("You are not logged in!")
             exit()
-    if choice == 'delete':
+    if args.action == 'delete':
         if os.path.exists(os.path.join(".clif", "authdata")):
-            r = requests.post(f"{server_address}/delete-file", json={'user_id': user_id, 'pass_hash': passhash, 'filename': file})
+            r = requests.post(f"{server_address}/delete-file", json={'user_id': user_id, 'pass_hash': passhash, 'filename': args.file})
             print(r.json()['message'])
         else:
             print("You are not logged in!")
             exit()
-    if choice == 'info':
+    if args.action == 'info':
         r = requests.post(f"{server_address}/fetch-userdata", json={'user_id': user_id, 'pass_hash': passhash})
         if r.status_code != 200:
             print("An error occurred while fetching user data.")
@@ -128,5 +127,5 @@ while not exiting:
             Allocation Limit: {r.json()['allocation_limit']} bytes
             Percentage of storage used: {r.json()['data_percent']}%
 """)
-    if choice == 'exit':
-        exiting = True
+if __name__ == "__main__":
+    main()

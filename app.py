@@ -86,21 +86,21 @@ def upload_file():
         if data[0][0] == passhash:
             #Then, UPLOAD
             file_id = str(uuid.uuid4())
-            with open(f"FileStor/{file_id}", 'wb') as f:
+            with open(os.path.join("FileStor", file_id), 'wb') as f:
                 f.write(request.files['file'].read())
                 f.flush()
             #Calculate file hash
             hash_func = hashlib.new("sha256")
-            with open(f"FileStor/{file_id}", 'rb') as file:
+            with open(os.path.join("FileStor", file_id), 'rb') as file:
                 while chunk := file.read(8192):
                     hash_func.update(chunk)
             file_hash = hash_func.hexdigest()
             try:
-                os.mkdir(f"FileStor/{file_hash[:2]}")
+                os.mkdir(os.path.join("FileStor", file_hash[:2]))
             except:
                 pass
-            shutil.move(f"FileStor/{file_id}", f"FileStor/{file_hash[:2]}/{file_id}")
-            database_cursor.execute("INSERT INTO filedata (file_id, owner, file_name, file_size, file_path, file_hash) VALUES (?, ?, ?, ?, ?, ?)", (file_id, request.form.get('user_id'), request.form.get('filename'), os.path.getsize(f"FileStor/{file_hash[:2]}/{file_id}"), f"{file_hash[:2]}/{file_id}", file_hash))
+            shutil.move(os.path.join("FileStor", file_id), os.path.join("FileStor", file_hash[:2], file_id))
+            database_cursor.execute("INSERT INTO filedata (file_id, owner, file_name, file_size, file_path, file_hash) VALUES (?, ?, ?, ?, ?, ?)", (file_id, request.form.get('user_id'), request.form.get('filename'), os.path.getsize(os.path.join("FileStor", file_hash[:2], file_id)), f"{file_hash[:2]}/{file_id}", file_hash))
             database_connection.commit()
             database_cursor.execute("SELECT file_size FROM filedata WHERE owner = ?", (request.form.get('user_id'),))
             data = database_cursor.fetchall()
@@ -173,7 +173,7 @@ def retrieve_file():
         filedata = database_cursor.fetchall()
         print(filedata)
         if filedata:
-            return send_from_directory(f"FileStor/{str(filedata[0][0])[:2]}", filedata[0][1], as_attachment=True)
+            return send_from_directory(os.path.join("FileStor", str(filedata[0][0])[:2]), filedata[0][1], as_attachment=True)
         else:
             return {
                 'status': 'fail',
@@ -230,7 +230,7 @@ def delete_file():
         data = database_cursor.fetchall()
         print(request_data)
         print(data)
-        os.remove(f"FileStor/{data[0][0]}")
+        os.remove(os.path.join("FileStor", data[0][0]))
         database_cursor.execute("DELETE FROM filedata WHERE owner = ? AND file_name = ?", (request_data.get("user_id"), request_data.get('filename')))
         database_connection.commit()
         database_cursor.execute("SELECT file_size FROM filedata WHERE owner = ?", (request_data.get('user_id'),))

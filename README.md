@@ -5,6 +5,20 @@ A CLI app/server meant to be a self hostable version of google drive with custom
 The server can be interacted with either by the client application or curl
 
 # Setup
+## Both Systems
+Just use:
+~~~bash
+pip install clifilestor
+~~~
+And it can be run:
+(Client)
+~~~bash
+clif {option}}
+~~~
+(Server)
+~~~bash
+clif-server
+~~~
 ## Server
 1. Install python3 (3.10 Reccomended)
 2. Make sure venv is installed alongside python3
@@ -16,6 +30,7 @@ The server can be interacted with either by the client application or curl
 3. (Optional) if you want to run the client without the exe overhead, install the packages: requests.
 
 ## Live Server
+WIll be offline going into april 2026.
 http://187.124.225.245:999
 (Server is secure, hosted with gunicorn!)
 ## Demo Video:
