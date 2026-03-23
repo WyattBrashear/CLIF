@@ -53,8 +53,7 @@ All of the API endpoints are POST based.
 By defualt, the client stores authentication data in a file located in .clif/authdata. It needs to be recreated if you are working in a new directory.
 
 ## Usage - Client (Script)
-~~~commandline
-'''
+~~~bash
 client.py signup #Create authdata, and account
 client.py login #Login to an existing account (Creates authdata)
 client.py list #List all files owned by the user
@@ -63,7 +62,6 @@ client.py download <file> #Download a file
 client.py info #Get user info
 client.py delete <file> #Delete a file
 client.py logout #Logout and delete authdata (Deletes authdata)
-'''
 ~~~
 In the executable, the client will list the options in the terminal using python's input function.
 
