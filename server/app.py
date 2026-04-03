@@ -18,7 +18,6 @@ def _init_db():
         'CREATE TABLE IF NOT EXISTS userdata (user_id TEXT, user_name TEXT, pass_hash TEXT, pass_hashmode TEXT, allocation_limit INT, used_data INT)'
     )
     database_cursor.execute("CREATE TABLE IF NOT EXISTS filedata (file_id TEXT, owner TEXT, file_name TEXT, file_size INT, file_path TEXT, file_hash TEXT)")
-    database_connection.commit()
 @app.route('/register', methods=['POST'])
 def register_user():  # put application's code here
     database_connection = sqlite3.connect('UserData.db')
@@ -248,7 +247,7 @@ def delete_file():
 
 def main():
     _init_db()
-    app.run()
+    app.run(host='0.0.0.0', port=8000, debug=True)
 if __name__ == '__main__':
     main()
 

@@ -9,6 +9,8 @@ from werkzeug.utils import secure_filename
 from pathlib import Path
 parser = argparse.ArgumentParser()
 parser.add_argument('action', choices=['start'], help='Start the server')
+parser.add_argument('--expose', action='store_true', help='Expose the server to the internet')
+
 args = parser.parse_args()
 Path('FileStor').mkdir(parents=True, exist_ok=True)
 database_connection1 = sqlite3.connect('UserData.db')
@@ -29,7 +31,7 @@ def register_user():  # put application's code here
     user_id = str(uuid.uuid4())
     user_name = str(request_data['username'])
     pass_hash = str(request_data['password'])
-    allocation_limit = int(20000)
+    allocation_limit = int(20000000)
     database_cursor.execute("INSERT INTO userdata (user_id, user_name, pass_hash, pass_hashmode, allocation_limit, used_data) VALUES (?, ?, ?, ?, ?, ?)", (user_id, user_name, pass_hash, 'sha256', allocation_limit, 0))
     database_connection.commit()
     return {
@@ -250,4 +252,4 @@ def delete_file():
 
 
 if __name__ == '__main__' and args.action == 'start':
-    app.run()
+    app.run(host='0.0.0.0', port=8000, debug=True)
