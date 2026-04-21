@@ -34,6 +34,7 @@ def register_user():  # put application's code here
     allocation_limit = int(20000000)
     database_cursor.execute("INSERT INTO userdata (user_id, user_name, pass_hash, pass_hashmode, allocation_limit, used_data) VALUES (?, ?, ?, ?, ?, ?)", (user_id, user_name, pass_hash, 'sha256', allocation_limit, 0))
     database_connection.commit()
+    database_connection.close()
     return {
         'status': 'success',
         'message': 'User Created',
@@ -49,6 +50,7 @@ def fetch_userdata():
     database_cursor.execute("SELECT user_id, user_name, pass_hash, allocation_limit, used_data FROM userdata WHERE user_id = ? AND pass_hash = ?", (request_data.get('user_id'), request_data.get('pass_hash')))
     data = database_cursor.fetchall()
     #Yes i know this is a bad variable name. i cant think of a name right now.
+    database_cursor.close()
     x = data[0][4] / data[0][3]
     return {
         'status': 'success',
@@ -110,6 +112,7 @@ def upload_file():
             database_cursor.execute("UPDATE userdata SET used_data = ? WHERE user_id = ?",
                                     (new_size, request.form.get('user_id')))
             database_connection.commit()
+            database_connection.close()
             return {
                 'status': 'success',
                 'message': 'File Uploaded',
@@ -145,6 +148,7 @@ def list_dir():
         if data[0][0] == request_data.get('pass_hash'):
             database_cursor.execute("SELECT file_name FROM filedata WHERE owner = ?", (request_data.get('user_id'),))
             directories = database_cursor.fetchall()
+            database_cursor.close()
             return {
                 'status': 'success',
                 'directories': directories
@@ -173,7 +177,8 @@ def retrieve_file():
             "SELECT file_path, file_id, file_hash, file_name FROM filedata WHERE file_name = ? AND owner = ?",
             (request_data.get('filename'), request_data.get('user_id'),))
         filedata = database_cursor.fetchall()
-        print(filedata)
+        database_cursor.close()
+        #print(filedata)
         if filedata:
             return send_from_directory(os.path.join("FileStor", str(filedata[0][0])[:2]), filedata[0][1], as_attachment=True)
         else:
@@ -195,6 +200,7 @@ def authenticate():
     request_data = request.get_json()
     database_cursor.execute("SELECT pass_hash FROM userdata WHERE pass_hash = ? AND user_id = ?", (request_data.get('pass_hash'), request_data.get('user_id'),))
     auth_pass = database_cursor.fetchall()
+    database_cursor.close()
     try:
         if request_data.get('pass_hash') == auth_pass[0][0]:
             return {
@@ -215,6 +221,7 @@ def translate_uname():
     #Okay. All this needs to do is translate the Username to a UserID. So no authentication needed!
     database_cursor.execute("SELECT user_id FROM userdata WHERE user_name = ?", (request_data.get('user_name'),))
     data = database_cursor.fetchall()
+    database_cursor.close()
     return {
         'status': 'success',
         'message': f'{data[0][0]}'
@@ -240,6 +247,7 @@ def delete_file():
         new_size = sum(row[0] for row in data)
         database_cursor.execute("UPDATE userdata SET used_data = ? WHERE user_id = ?", (new_size, request_data.get('user_id')))
         database_connection.commit()
+        database_connection.close()
         return {
             'status': 'success',
             'message': 'File Deleted'
