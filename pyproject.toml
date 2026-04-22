@@ -1,6 +1,6 @@
 [project]
 name = "clifilestor"
-version = "1.0.3"
+version = "1.0.4"
 description = "CLIF CLI File storage system (CLI Google Drive Essentially)"
 requires-python = ">=3.10"
 dependencies = [
