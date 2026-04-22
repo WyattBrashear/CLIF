@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Public Hostable!!!">
-      <change beforePath="$PROJECT_DIR$/../507ex-rewrite/.idea/507ex-rewrite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../507ex-rewrite/.idea/507ex-rewrite.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../507ex-rewrite/fzx2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../507ex-rewrite/fzx2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../507ex-rewrite/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../507ex-rewrite/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../507ex-rewrite/script/fzx2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../507ex-rewrite/script/fzx2.py" afterDir="false" />
+    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Make the project in linewith the current python packages">
+      <change afterPath="$PROJECT_DIR$/CLIF.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="169" />
+    <option name="cachedIndexableFilesCount" value="179" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -94,6 +93,7 @@
     &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
     &quot;Docker.dockerstuffs/Dockerfile: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Flask server.CLIF.executor&quot;: &quot;Run&quot;,
+    &quot;Flask server.Flask (app.py).executor&quot;: &quot;Run&quot;,
     &quot;HTTP Request.All in generated-requests.executor&quot;: &quot;Run&quot;,
     &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
     &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
@@ -145,7 +145,7 @@
       <recent name="$PROJECT_DIR$/distrobution/507ex" />
     </key>
   </component>
-  <component name="RunManager" selected="Flask server.CLIF">
+  <component name="RunManager" selected="Docker.Dockerfile: Compose Deployment">
     <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
       <method v="2" />
     </configuration>
@@ -233,6 +233,7 @@
       <workItem from="1775055425206" duration="33411000" />
       <workItem from="1775483763164" duration="93000" />
       <workItem from="1775516510852" duration="2866000" />
+      <workItem from="1776887764277" duration="2098000" />
     </task>
     <task id="LOCAL-00001" summary="Commit my work for right now">
       <option name="closed" value="true" />
@@ -346,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775253294084</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Make the project in linewith the current python packages">
+      <option name="closed" value="true" />
+      <created>1776887883638</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1776887883640</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,30 +385,32 @@
     <MESSAGE value="Add some work based on reccomendations" />
     <MESSAGE value="It Is Pypied now...." />
     <MESSAGE value="Public Hostable!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Public Hostable!!!" />
+    <MESSAGE value="Make the project in linewith the current python packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make the project in linewith the current python packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>87</line>
+          <line>90</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>177</line>
+          <line>183</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>70</line>
+          <line>73</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CLIF$CLIF.coverage" NAME="CLIF Coverage Results" MODIFIED="1775245099796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIF$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1776888526971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/CLIF$CLIF.coverage" NAME="CLIF Coverage Results" MODIFIED="1776888475400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

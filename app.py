@@ -1,17 +1,12 @@
 import shutil
-import argparse
 import hashlib
 from flask import Flask, request, send_file, send_from_directory
 import sqlite3
 import uuid
 import os
-from werkzeug.utils import secure_filename
+import json
 from pathlib import Path
-parser = argparse.ArgumentParser()
-parser.add_argument('action', choices=['start'], help='Start the server')
-parser.add_argument('--expose', action='store_true', help='Expose the server to the internet')
 
-args = parser.parse_args()
 Path('FileStor').mkdir(parents=True, exist_ok=True)
 database_connection1 = sqlite3.connect('UserData.db')
 database_cursor1 = database_connection1.cursor()
@@ -31,7 +26,13 @@ def register_user():  # put application's code here
     user_id = str(uuid.uuid4())
     user_name = str(request_data['username'])
     pass_hash = str(request_data['password'])
-    allocation_limit = int(20000000)
+    if os.path.exists("./CLIF.json"):
+        with open("./CLIF.json", "r") as f:
+            server_config = json.load(f)
+            allocation_limit = server_config.get("allocation_limit")
+            f.close()
+    else:
+        allocation_limit = int(20000)
     database_cursor.execute("INSERT INTO userdata (user_id, user_name, pass_hash, pass_hashmode, allocation_limit, used_data) VALUES (?, ?, ?, ?, ?, ?)", (user_id, user_name, pass_hash, 'sha256', allocation_limit, 0))
     database_connection.commit()
     database_connection.close()
@@ -259,5 +260,14 @@ def delete_file():
         }
 
 
-if __name__ == '__main__' and args.action == 'start':
-    app.run(host='0.0.0.0', port=8000, debug=True)
+if __name__ == '__main__':
+    if os.path.exists('./CLIF.json'):
+        with open("./CLIF.json", "r") as f:
+            server_config = json.load(f)
+            port = server_config.get("server_port")
+            host = server_config.get("host")
+    else:
+        host = "127.0.0.1"
+        port = 8000
+    print("CLIF (CLIFilestor) v 1.10 Created by Wyatt Brashear")
+    app.run(host=host, port=port)

@@ -9,16 +9,16 @@ def main():
     parser.add_argument('action', choices=['upload', 'download', 'list', 'login', 'logout', 'delete', 'signup', 'info'])
     parser.add_argument('file', nargs='?')
     args = parser.parse_args()
-
+    authdata_found = False
     try:
         with open(os.path.join(".clif", "authdata"), "r") as f:
             user_id = f.readline().strip()
             passhash = f.readline().strip()
             server_address = f.readline().strip()
             username = f.readline().strip()
+            authdata_found = True
     except:
         pass
-
 
     if args.action == 'signup':
         if os.path.exists(os.path.join(".clif", "authdata")):
@@ -59,7 +59,8 @@ def main():
         if r.json()['status'] == "success":
             print("Login Successful")
             try:
-                os.mkdir(".clif")
+                if not os.path.exists(".clif"):
+                    os.mkdir(".clif")
                 with open(os.path.join(".clif", "authdata"), "w") as f:
                     f.write(user_id)
                     f.write("\n")
@@ -115,11 +116,12 @@ def main():
             print("You are not logged in!")
             exit()
     if args.action == 'info':
-        r = requests.post(f"{server_address}/fetch-userdata", json={'user_id': user_id, 'pass_hash': passhash})
-        if r.status_code != 200:
-            print("An error occurred while fetching user data.")
-            exit()
-        print(f"""User Statistics for {username}:
+        if authdata_found:
+            r = requests.post(f"{server_address}/fetch-userdata", json={'user_id': user_id, 'pass_hash': passhash})
+            if r.status_code != 200:
+                print("An error occurred while fetching user data.")
+                exit()
+            print(f"""User Statistics for {username}:
 ---------------------------------
             Username: {username}
             User ID: {user_id}
