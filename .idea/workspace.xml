@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Make the project in linewith the current python packages">
-      <change afterPath="$PROJECT_DIR$/CLIF.json" afterDir="false" />
+    <list default="true" id="8bca9f24-9aa0-4346-aa33-e6d673def36b" name="Changes" comment="Ok 1.10 is ready for release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +38,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -234,6 +230,8 @@
       <workItem from="1775483763164" duration="93000" />
       <workItem from="1775516510852" duration="2866000" />
       <workItem from="1776887764277" duration="2098000" />
+      <workItem from="1776892621899" duration="532000" />
+      <workItem from="1776950145314" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="Commit my work for right now">
       <option name="closed" value="true" />
@@ -355,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776887883640</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Ok 1.10 is ready for release">
+      <option name="closed" value="true" />
+      <created>1776892760513</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1776892760513</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,7 +392,8 @@
     <MESSAGE value="It Is Pypied now...." />
     <MESSAGE value="Public Hostable!!!" />
     <MESSAGE value="Make the project in linewith the current python packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make the project in linewith the current python packages" />
+    <MESSAGE value="Ok 1.10 is ready for release" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ok 1.10 is ready for release" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
