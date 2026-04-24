@@ -1,6 +1,6 @@
 import shutil
 import hashlib
-from flask import Flask, request, send_file, send_from_directory
+from flask import Flask, request, send_file, send_from_directory, redirect
 import sqlite3
 import uuid
 import os
@@ -104,12 +104,22 @@ def upload_file():
                 os.mkdir(os.path.join("FileStor", file_hash[:2]))
             except:
                 pass
-            shutil.move(os.path.join("FileStor", file_id), os.path.join("FileStor", file_hash[:2], file_id))
-            database_cursor.execute("INSERT INTO filedata (file_id, owner, file_name, file_size, file_path, file_hash) VALUES (?, ?, ?, ?, ?, ?)", (file_id, request.form.get('user_id'), request.form.get('filename'), os.path.getsize(os.path.join("FileStor", file_hash[:2], file_id)), f"{file_hash[:2]}/{file_id}", file_hash))
+            shutil.move(os.path.join("FileStor", file_id), os.path.join("FileStor", file_hash[:2], file_hash))
+            database_cursor.execute("INSERT INTO filedata (file_id, owner, file_name, file_size, file_path, file_hash) VALUES (?, ?, ?, ?, ?, ?)", (file_id, request.form.get('user_id'), request.form.get('filename'), os.path.getsize(os.path.join("FileStor", file_hash[:2], file_hash)), f"{file_hash[:2]}/{file_hash}", file_hash))
             database_connection.commit()
             database_cursor.execute("SELECT file_size FROM filedata WHERE owner = ?", (request.form.get('user_id'),))
             data = database_cursor.fetchall()
             new_size = sum(row[0] for row in data)
+            database_cursor.execute("SELECT allocation_limit FROM userdata WHERE user_id = ?", (request.form.get('user_id'),))
+            allocation_limit = database_cursor.fetchall()[0][0]
+            if new_size >= allocation_limit:
+                os.remove(os.path.join("FileStor", file_hash[:2], file_hash))
+                database_cursor.execute("DELETE FROM filedata WHERE owner = ? AND file_id = ?", (request.form.get('user_id'), file_id,))
+                database_connection.commit()
+                return {
+                    'status': 'fail',
+                    'message': "File Denied! File size too large!"
+                }
             database_cursor.execute("UPDATE userdata SET used_data = ? WHERE user_id = ?",
                                     (new_size, request.form.get('user_id')))
             database_connection.commit()
@@ -147,12 +157,16 @@ def list_dir():
         }
     try:
         if data[0][0] == request_data.get('pass_hash'):
-            database_cursor.execute("SELECT file_name FROM filedata WHERE owner = ?", (request_data.get('user_id'),))
+            database_cursor.execute("SELECT file_name, file_size, file_id FROM filedata WHERE owner = ?", (request_data.get('user_id'),))
             directories = database_cursor.fetchall()
+            file_data = []
+            for file_name, file_size, file_id in directories:
+                file_data.append((file_name, file_size, file_id))
             database_cursor.close()
+            print(file_data)
             return {
                 'status': 'success',
-                'directories': directories
+                'directories': file_data
             }
         else:
             return {
@@ -240,7 +254,13 @@ def delete_file():
         data = database_cursor.fetchall()
         print(request_data)
         print(data)
-        os.remove(os.path.join("FileStor", data[0][0]))
+        if len(data) > 0:
+            os.remove(os.path.join("FileStor", data[0][0]))
+        else:
+            return {
+                'status': 'fail',
+                "message": "File does not exist!"
+            }
         database_cursor.execute("DELETE FROM filedata WHERE owner = ? AND file_name = ?", (request_data.get("user_id"), request_data.get('filename')))
         database_connection.commit()
         database_cursor.execute("SELECT file_size FROM filedata WHERE owner = ?", (request_data.get('user_id'),))
@@ -258,6 +278,10 @@ def delete_file():
             'status': 'fail',
             'message': 'Authentication Failure!'
         }
+
+@app.route('/', methods=["GET"])
+def forward_to_github():
+    return redirect("https://github.com/WyattBrashear/CLIF")
 
 
 if __name__ == '__main__':
